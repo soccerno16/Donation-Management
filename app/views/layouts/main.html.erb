@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<%=javascript_include_tag(:defaults) %>
+	</head>
+	<body>
+		<%= render :partial => 'layouts/user_top_bar'%>
+		<div id="error"></div>
+		<div id="content">
+			<%= yield %>
+		</div>
+	</body>
+</html>
