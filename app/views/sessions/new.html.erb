@@ -1,0 +1,5 @@
+<% form_for :user, :url => sessions_path do |f| -%>
+	Email address: <%= f.text_field :email %><br/>
+	Password: <%= f.text_field :password %><br/>
+	<%= link_to "Forgot Password", forgot_password_path %>
+<% end %>

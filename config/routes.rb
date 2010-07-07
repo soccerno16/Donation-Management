@@ -30,8 +30,16 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
+  map.resource :sessions
   map.resource :users
 
+  map.forgot_password "/sessions/forgot_password", :controller => 'sessions', :action => 'forgot_password'
+  map.retrieve_password "/sessions/retrieve_password", :controller => 'sessions', :action => 'retrieve_password'
+
+
+  map.terms_of_service "/terms-of-service", :controller => 'welcome', :action => 'terms_of_service'
+
+  
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "welcome"
 

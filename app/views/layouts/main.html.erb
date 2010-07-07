@@ -8,7 +8,9 @@
 		<%= render :partial => 'layouts/user_top_bar'%>
 		<div id="error"></div>
 		<div id="content">
+			<%= render :partial => 'layouts/top_nav' %>
 			<%= yield %>
 		</div>
+		<%= render :partial => 'layouts/footer' %>
 	</body>
 </html>

@@ -4,13 +4,6 @@ Feature: Registration
   I want to be able to create a new account
 
   @javascript
-  Scenario: Signup Form
-    Given there are no users with the email address test@domain.com
-	And I am on the home page
-	When I follow "Signup"
-    Then I should see "First Name"
-
-  @javascript
   Scenario: Successful Signup
     Given there are no users with the email address test@domain.com
 	And I am on the home page
@@ -28,3 +21,6 @@ Feature: Registration
 		| user[province]   | Santa Cruz      |
 	And I press "Sign Up"
 	Then I should see "Signup successful."
+	And there should be 1 user with the email address test@domain.com
+	And the user with email address test@domain.com should not be active
+
