@@ -7,8 +7,10 @@
 	<body>
 		<%= render :partial => 'layouts/user_top_bar'%>
 		<div id="error"></div>
+		<%= render :partial => 'layouts/top_nav' %>
 		<div id="content">
-			<%= render :partial => 'layouts/top_nav' %>
+	       <p class="notice"><%= flash[:notice] %></p>
+	       <p class="alert"><%= flash[:alert] %></p>
 			<%= yield %>
 		</div>
 		<%= render :partial => 'layouts/footer' %>

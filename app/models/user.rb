@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
-#  attr_accessor :password, :password_confirmation, :active
-  attr_accessor :password_confirmation
+  # Include default devise modules. Others available are:
+  # :http_authenticatable, :token_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
+  devise :registerable, :database_authenticatable, :recoverable,
+         :rememberable, :trackable, :validatable
 
-  validates_format_of :email,
-    :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-  validates_uniqueness_of :email
-  
-  belongs_to :country
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :firstname, :lastname, :birthdate, :gender, :url_slug, :country_id, :province, :email, :password, :password_confirmation
 end

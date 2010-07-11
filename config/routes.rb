@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -31,9 +33,9 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   map.resource :sessions
-  map.resource :users
+  map.devise_for :users
+#  map.resource :users, :member => { :forgot_password => [:get,:post], :reset_password => :get }
 
-  map.forgot_password "/sessions/forgot_password", :controller => 'sessions', :action => 'forgot_password'
   map.retrieve_password "/sessions/retrieve_password", :controller => 'sessions', :action => 'retrieve_password'
 
 

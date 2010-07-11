@@ -14,6 +14,7 @@ require 'cucumber/rails/world'
 require 'cucumber/rails/active_record'
 require 'cucumber/web/tableish'
 
+
 require 'capybara/rails'
 require 'capybara/cucumber'
 require 'capybara/session'
@@ -60,3 +61,6 @@ if defined?(ActiveRecord::Base)
   rescue LoadError => ignore_if_database_cleaner_not_present
   end
 end
+
+require 'email_spec'
+require 'email_spec/cucumber'

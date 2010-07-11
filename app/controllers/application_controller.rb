@@ -7,4 +7,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+#  layout :layout_by_resource
+  layout 'main'
+  
+  def layout_by_resource
+    if devise_controller? and request.xhr?
+      false
+    else
+      "main"
+    end
+  end
+
+  
 end
