@@ -27,3 +27,5 @@ config.gem 'capybara',         :lib => false, :version => '>=0.3.5' unless File.
 
 config.gem 'warden'
 config.gem 'devise'
+
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
