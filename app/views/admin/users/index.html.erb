@@ -1,0 +1,13 @@
+<h1>Listing Users</h1>
+
+<%= will_paginate @users %>
+
+<table>
+	<% for user in @users %>
+		<tr>
+			<td><%= user.email %></td>
+		</tr>
+	<% end %>
+</table>
+
+<%= will_paginate @users %>

@@ -27,13 +27,14 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
+  map.namespace :admin do |admin|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
-  #   end
+    admin.resources :users
+  end
 
   map.resource :sessions
   map.devise_for :users
+  map.devise_for :admins
 #  map.resource :users, :member => { :forgot_password => [:get,:post], :reset_password => :get }
 
   map.retrieve_password "/sessions/retrieve_password", :controller => 'sessions', :action => 'retrieve_password'

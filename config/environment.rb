@@ -40,4 +40,5 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   config.gem 'warden'
   config.gem 'devise'
+  config.gem 'will_paginate'
 end
