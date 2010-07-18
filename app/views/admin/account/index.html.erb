@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+	<h1>Editing Your Personal Settings</h1>
+<% end %>
+
+
+<% form_for :admin, :url => admin_account_path(@admin.id), :html => { :method => :put } do |f| -%>
+	<%= f.error_messages %>
+	
+	Email: <%= f.text_field :email %><br/>
+	Password: <%= f.password_field :password %><br/>
+	Password Confirmation<%= f.password_field :password_confirmation %><br/>
+	<%= f.submit "Save" %>
+<% end %>

@@ -4,7 +4,7 @@ Feature: Admin Users
   I want to be able to manage all users
 
   @javascript
-  Scenario: Listing Users
+  Scenario: Users Management
     Given I am logged in as test@domain.com
     And there are 40 users
 	And I am on the home page
@@ -30,8 +30,8 @@ Feature: Admin Users
 	And the "user[firstname]" field should contain "Test1"
 	And the "user[lastname]" field should contain "Test2"
 	And the "user[url_slug]" field should contain "testtest"
-	And I should see "List Users"
-	When I follow "List Users"
+	And I should see "Users"
+	When I follow "Users"
 	Then I should see "test9@domain.com"
 	When I follow "deactivate9"
 	Then I should see "User has been deactivated"

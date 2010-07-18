@@ -1,6 +1,7 @@
-<%= link_to "List Users", admin_users_path %>
+<% content_for :page_title do %>
+	<h1>Editing user</h1>
+<% end %>
 
-<h1>Editing user</h1>
 
 <% form_for :user, :url => admin_user_path(@user.id), :html => { :method => :put } do |f| -%>
 	<%= f.error_messages %>

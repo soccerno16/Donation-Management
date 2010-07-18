@@ -13,7 +13,7 @@
 	Birthdate <%= f.date_select :birthdate %><br/>
 	Country <%= f.text_field :country_id %><br/>
 	Province <%= f.text_field :province %><br/>
-	
+	<%= recaptcha_tags :public_key => @setting.recaptcha_public_key if @setting %>
   <p><%= f.submit "Sign up" %></p>
 <% end -%>
 

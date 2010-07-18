@@ -6,6 +6,7 @@ class CreateAdmins < ActiveRecord::Migration
       t.trackable
       t.timestamps
     end
+    Admin.create(:email => "admin@domain.com", :password => "password")
   end
 
   def self.down

@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+	<h1>Site Settings</h1>
+<% end %>
+
+<% form_for :setting, :url => admin_setting_path(@setting.id), :html => { :method => :put }  do |f| -%>
+	<%= f.error_messages %>
+	Timezone: <%= f.text_field :timezone %><br/>
+	<p>
+		reCaptcha is used to help prevent automated signups from spammers.<br/>
+		Visit <%= link_to "http://www.recaptcha.net", "http://www.recaptcha.net", :target => "_blank" %> to get your keys.<br/>
+		reCaptcha Domain: <%= f.text_field :recaptcha_domain %><br/>
+		reCaptcha Public Key: <%= f.text_field :recaptcha_public_key %><br/>
+		reCaptcha Private Key: <%= f.text_field :recaptcha_private_key %><br/>
+	</p>
+	<%= f.submit "Save" %>
+<% end %>
+

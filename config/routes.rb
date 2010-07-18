@@ -28,9 +28,12 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route within a namespace:
   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
+  #   Directs /admin/users/* to Admin::UsersController (app/controllers/admin/users_controller.rb)
     admin.resources :users, :member => { :deactivate => :put }
+    admin.resources :account
+    admin.resources :settings
   end
+  map.admin "/admin", :controller => '/admin/dashboard', :action => 'index'
 
   map.resource :sessions
   map.devise_for :users

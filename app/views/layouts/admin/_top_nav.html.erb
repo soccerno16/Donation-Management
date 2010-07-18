@@ -1,0 +1,6 @@
+<% if !current_admin %>
+	<%= link_to_remote "Login", :url => { :controller => '/admins', :action => 'sign_in' }, :update => "content", :title => "Login", :script => false, :method => :get %>
+<% else %>
+	<%= link_to "My Account", :controller => '/admin/account', :action => 'index' %> / 
+	<%= link_to "Logout", :controller => '/admins', :action => 'sign_out' %>
+<% end %>

@@ -41,4 +41,5 @@ Rails::Initializer.run do |config|
   config.gem 'warden'
   config.gem 'devise'
   config.gem 'will_paginate'
+  config.gem "ambethia-recaptcha", :lib => "recaptcha/rails", :source => "http://gems.github.com"
 end

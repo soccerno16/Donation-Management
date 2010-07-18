@@ -1,6 +1,6 @@
 <% if !current_user and !current_admin %>
-	<%= link_to_remote "Login", :url => { :controller => 'users', :action => 'sign_in' }, :update => "content", :title => "Login", :script => false, :method => :get %> / 
-<%= link_to_remote "Sign Up", :url => { :controller => 'users', :action => 'sign_up' }, :update => "content", :title => "Sign Up", :script => false, :method => :get %>
+	<%= link_to "Login", new_user_session_path, :title => "Login" %> / 
+	<%= link_to "Sign Up", new_user_registration_path, :title => "Sign Up" %>
 <% else %>
 	<%= link_to "Logout", :controller => '/users', :action => 'sign_out' %>
 <% end %>
