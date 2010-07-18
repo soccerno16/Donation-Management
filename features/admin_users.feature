@@ -31,3 +31,7 @@ Feature: Admin Users
 	And the "user[lastname]" field should contain "Test2"
 	And the "user[url_slug]" field should contain "testtest"
 	And I should see "List Users"
+	When I follow "List Users"
+	Then I should see "test9@domain.com"
+	When I follow "deactivate9"
+	Then I should see "User has been deactivated"
